@@ -1,3 +1,6 @@
+body{
+    background: url("https://phonoteka.org/uploads/posts/2021-04/1619807194_11-phonoteka_org-p-azimov-ks-go-fon-11.png");
+}
 
 
 footer {
@@ -11,7 +14,7 @@ footer {
 /*hr*/
  hr {
     border: none; /* Убираем границу для браузера Firefox */
-    color: red; /* Цвет линии для остальных браузеров */
-    background-color: red; /* Цвет линии для браузера Firefox и Opera */
-    height: 10px; /* Толщина линии */
+    color: black; /* Цвет линии для остальных браузеров */
+    background-color: black; /* Цвет линии для браузера Firefox и Opera */
+    height: 5px; /* Толщина линии */
    }
