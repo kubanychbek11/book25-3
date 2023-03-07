@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'book',
     'show_book',
     'parser_py',
+    'custom_user',
 ]
 
 MIDDLEWARE = [

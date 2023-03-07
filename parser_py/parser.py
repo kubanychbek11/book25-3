@@ -17,7 +17,7 @@ def get_html(url, params=''):
 @csrf_exempt
 def get_data(html):
     soup = BS(html, 'html.parser')
-    items = soup.find_all('div', class_='short_movie_info')
+    items = soup.find_all('div', class_='b-content__inline_item')
     manas_film = []
 
     for item in items:
@@ -25,8 +25,8 @@ def get_data(html):
             {
             'title_url': URL + item.find('a').get('href'),
             'title_text': item.find('div', class_='b-content__inline_item-link').get_text(),
-            'image': URL + item.find('div', class_='b-content__inline_item-cover').find('img').get('src')
-            #"info": item.find("span", class_="info").getText() if item.find("span", class_="info")is not None else "полнометражка"
+            'image': URL + item.find('div', class_='b-content__inline_item-cover').find('img').get('src'),
+            'genre': item.find('div', class_='b-content__inline_item-link').find('a').get_text(),
             })
 
     return manas_film
@@ -37,7 +37,7 @@ def parser():
     if html.status_code == 200:
         manas_film1 = []
         for page in range(0, 1):
-            html = get_html(f'https://rezka.ag/animation/?filter=watching', params=page)
+            html = get_html(f'https://rezka.ag/films/?filter=watching', params=page)
             manas_film1.extend(get_data(html.text))
         return manas_film1
         #print(f'\n{manas_film1}\n')
