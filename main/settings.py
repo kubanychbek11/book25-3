@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'show_book',
     'parser_py',
     'custom_user',
+    'cloth',
 ]
 
 MIDDLEWARE = [
